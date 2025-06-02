@@ -3,22 +3,10 @@ import {DataSource} from "typeorm";
 
 import {User} from "./entity/User";
 
-const sslCertPath = process.env.SUPABASE_SSL_CERT;
-
-let sslConfig: any = false;
-
-if (sslCertPath) {
-    try {
-        const certContent = process.env.SUPABASE_SSL_CERT_RAW;
-        sslConfig = {
-            ca: certContent,
-            rejectUnauthorized: true
-        };
-    } catch (error) {
-        console.error('Failed to read SSL certificate:', error);
-        throw new Error('SSL certificate loading failed');
-    }
-}
+const sslConfig = {
+    ca: process.env.SUPABASE_SSL_CERT_RAW,
+    rejectUnauthorized: true
+};
 
 const AppDataSource = new DataSource({
     type: 'postgres',

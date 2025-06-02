@@ -15,7 +15,7 @@ export default async function RootLayout(
     }: Readonly<{
         children: React.ReactNode;
     }>) {
-    await DatabaseService.getInstance();
+    // await DatabaseService.getInstance();
 
     return (
         <html lang="en">

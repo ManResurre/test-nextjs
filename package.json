@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "next": "15.3.3",
+    "pg": "^8.16.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "typeorm": "^0.3.24",
-    "typeorm-ts-node-commonjs": "^0.3.20",
-    "pg": "^8.16.0"
+    "typeorm-ts-node-commonjs": "^0.3.20"
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "1.1.0",
@@ -30,8 +30,8 @@
     "autoprefixer": "^10.4.21",
     "eslint": "9.28.0",
     "eslint-config-next": "15.3.3",
-    "postcss": "8.5.4",
-    "tailwindcss": "4.1.8",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8",
     "typescript": "5.8.3",
     "wrangler": "4.18.0"
   },

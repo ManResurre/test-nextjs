@@ -1,6 +1,4 @@
 import "reflect-metadata";
-import {join} from 'path';
-import {readFileSync} from 'fs';
 import {DataSource} from "typeorm";
 
 import {User} from "./entity/User";
@@ -11,7 +9,7 @@ let sslConfig: any = false;
 
 if (sslCertPath) {
     try {
-        const certContent = process.env.SUPABASE_SSL_CERT_RAW ? process.env.SUPABASE_SSL_CERT_RAW : readFileSync(join(process.cwd(), sslCertPath), 'utf8');
+        const certContent = process.env.SUPABASE_SSL_CERT_RAW;
         sslConfig = {
             ca: certContent,
             rejectUnauthorized: true

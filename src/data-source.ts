@@ -18,7 +18,7 @@ const AppDataSource = new DataSource({
     synchronize: false,
     entities: [User],
     subscribers: [],
-    migrations: [__dirname + '/migration/*.ts'],
+    migrations: [],
     ssl: sslConfig,
     extra: {
         ssl: sslConfig ? {

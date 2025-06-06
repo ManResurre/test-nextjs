@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import {DatabaseService} from "@/lib/DatabaseService";
+import AppDataSource from "@/data-source";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -23,6 +24,8 @@ export default async function RootLayout(
     console.log(process.env.SUPABASE_DB_USER);
     console.log(process.env.SUPABASE_DB_PASSWORD);
     console.log(process.env.SUPABASE_DB_NAME);
+
+    await AppDataSource.initialize();
 
     return (
         <html lang="en">

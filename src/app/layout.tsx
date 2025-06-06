@@ -12,6 +12,7 @@ export default async function RootLayout(
         children: React.ReactNode;
     }>) {
 
+    console.log('HYPERDRIVE:', JSON.stringify(process.env.HYPERDRIVE));
 
     return (
         <html lang="en">

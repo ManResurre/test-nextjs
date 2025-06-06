@@ -6,11 +6,12 @@ export async function GET() {
 
     try {
         const db = createDrizzleClient();
-        const allUsers = await db.select().from(users);
+        // const allUsers = await db.select().from(users);
 
-        // const result = await db.execute('select 1');
+        const result = await db.execute('select 1');
 
-        return NextResponse.json(allUsers);
+
+        return NextResponse.json(result);
     } catch (error) {
         console.error("DB error:", error);
         return NextResponse.json({error: "Database error"}, {status: 500});

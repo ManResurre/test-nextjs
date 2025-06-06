@@ -36,15 +36,16 @@ const AppDataSource = new DataSource({
     migrations: [__dirname + '/migration/*.ts'],
     ssl: sslConfig,
     extra: {
-        ssl: sslConfig ? {
-            ...sslConfig,
-            require: true
-        } : null,
-        pool: {
-            max: 5,
-            min: 1,
-            idleTimeoutMillis: 30000
-        }
+        ssl: false
+        // ssl: sslConfig ? {
+        //     ...sslConfig,
+        //     require: true
+        // } : null,
+        // pool: {
+        //     max: 5,
+        //     min: 1,
+        //     idleTimeoutMillis: 30000
+        // }
     },
     logging: false
 });

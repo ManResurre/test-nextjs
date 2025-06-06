@@ -17,7 +17,12 @@ export default async function RootLayout(
     }>) {
     // await DatabaseService.getInstance();
     console.log("AAAAAAAAAAAAAAAAAA");
-    console.log(process.env);
+    console.log(process.env.SUPABASE_SSL_CERT_RAW);
+    console.log(process.env.SUPABASE_DB_HOST);
+    console.log(process.env.SUPABASE_DB_PORT);
+    console.log(process.env.SUPABASE_DB_USER);
+    console.log(process.env.SUPABASE_DB_PASSWORD);
+    console.log(process.env.SUPABASE_DB_NAME);
 
     return (
         <html lang="en">

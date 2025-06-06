@@ -1,27 +1,12 @@
 import "reflect-metadata";
-import {BaseEntity, Column, DataSource, PrimaryGeneratedColumn} from "typeorm";
+import {DataSource} from "typeorm";
+
+import {User} from "./entity/User";
 
 const sslConfig = {
     ca: process.env.SUPABASE_SSL_CERT_RAW,
     rejectUnauthorized: true
 };
-
-export class User extends BaseEntity{
-
-    @PrimaryGeneratedColumn()
-    id: number;
-
-    @Column()
-    firstName: string;
-
-    @Column()
-    lastName: string;
-
-    @Column()
-    age: number;
-
-}
-
 
 const AppDataSource = new DataSource({
     type: 'postgres',
@@ -36,18 +21,17 @@ const AppDataSource = new DataSource({
     migrations: [__dirname + '/migration/*.ts'],
     ssl: sslConfig,
     extra: {
-        ssl: false
-        // ssl: sslConfig ? {
-        //     ...sslConfig,
-        //     require: true
-        // } : null,
-        // pool: {
-        //     max: 5,
-        //     min: 1,
-        //     idleTimeoutMillis: 30000
-        // }
+        ssl: sslConfig ? {
+            ...sslConfig,
+            require: true
+        } : null,
+        pool: {
+            max: 5,
+            min: 1,
+            idleTimeoutMillis: 30000
+        }
     },
-    logging: false
+    logging: ['error']
 });
 
 export default AppDataSource;

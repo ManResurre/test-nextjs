@@ -17,7 +17,7 @@ export default async function RootLayout(
     }>) {
     // await DatabaseService.getInstance();
     console.log("AAAAAAAAAAAAAAAAAA");
-    console.log(process.env.console);
+    console.log(process.env);
 
     return (
         <html lang="en">

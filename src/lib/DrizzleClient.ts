@@ -1,10 +1,10 @@
 import {drizzle} from "drizzle-orm/postgres-js";
 import postgres from "postgres";
-// import {join} from 'path';
-// import {readFileSync} from 'fs';
 import * as schema from "./schema";
+// import {readFileSync, writeFileSync} from "node:fs";
 
-// const cert = readFileSync(join(process.cwd(), './prod-ca-2021.crt'), 'utf8');
+// console.log('Original length:', readFileSync('./prod-ca-2021.crt', 'utf8').length);
+// console.log('Env length:', Buffer.from(process.env.SUPABASE_SSL_CERT_RAW!, 'base64').toString('utf-8').length);
 
 export function createDrizzleClient() {
     const client = postgres({
@@ -14,7 +14,7 @@ export function createDrizzleClient() {
         password: process.env.SUPABASE_DB_PASSWORD,
         database: process.env.SUPABASE_DB_NAME,
         ssl: {
-            ca: process.env.SUPABASE_SSL_CERT_RAW,
+            ca: Buffer.from(process.env.SUPABASE_SSL_CERT_RAW!, 'base64').toString('utf-8'),
             rejectUnauthorized: true,
             require: true
         }

@@ -16,6 +16,7 @@ export default async function RootLayout(
         children: React.ReactNode;
     }>) {
     // await DatabaseService.getInstance();
+    console.log("AAAAAAAAAAAAAAAAAA");
     console.log(process.env.console);
 
     return (

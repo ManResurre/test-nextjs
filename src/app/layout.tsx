@@ -1,10 +1,6 @@
 import type {Metadata} from "next";
-import {Inter} from "next/font/google";
-import {DatabaseService} from "@/lib/DatabaseService";
 import AppDataSource from "@/data-source";
-import {connection} from "next/server";
-
-const inter = Inter({subsets: ["latin"]});
+import {User} from "@/entity/User";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -28,9 +24,13 @@ export default async function RootLayout(
 
     const connection = await AppDataSource.initialize();
     console.log('isInitialized: ', connection.isInitialized);
+    const res = await User.find();
+    console.log(JSON.stringify(res));
+
+
     return (
         <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body>{children}</body>
         </html>
     );
 }

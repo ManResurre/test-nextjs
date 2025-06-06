@@ -18,8 +18,7 @@
     "pg": "^8.16.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "typeorm": "^0.3.24",
-    "typeorm-ts-node-commonjs": "^0.3.20"
+    "typeorm": "^0.3.24"
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "1.1.0",

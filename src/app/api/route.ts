@@ -4,7 +4,7 @@ import {users} from "@/lib/schema";
 
 export async function GET() {
     console.log(process.env.SUPABASE_DB_HOST);
-    console.log(process.env.SUPABASE_DB_PORT);
+    console.log('SUPABASE_DB_PORT', parseInt(process.env.SUPABASE_DB_PORT!));
     console.log(process.env.SUPABASE_DB_USER);
     console.log(process.env.SUPABASE_DB_PASSWORD);
     console.log(process.env.SUPABASE_DB_NAME);

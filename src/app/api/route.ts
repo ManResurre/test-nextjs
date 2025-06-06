@@ -4,10 +4,7 @@ import AppDataSource from "@/data-source";
 
 export async function GET() {
     try {
-        if (!AppDataSource.isInitialized) {
-            await AppDataSource.initialize();
-        }
-
+        await AppDataSource.initialize();
         const users = await User.find();
         return NextResponse.json(users);
     } catch (error) {

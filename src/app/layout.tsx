@@ -14,21 +14,12 @@ export default async function RootLayout(
         children: React.ReactNode;
     }>) {
     // await DatabaseService.getInstance();
-    console.log("AAAAAAAAAAAAAAAAAA");
-    console.log(process.env.SUPABASE_SSL_CERT_RAW);
-    console.log(process.env.SUPABASE_DB_HOST);
-    console.log(process.env.SUPABASE_DB_PORT);
-    console.log(process.env.SUPABASE_DB_USER);
-    console.log(process.env.SUPABASE_DB_PASSWORD);
-    console.log(process.env.SUPABASE_DB_NAME);
 
     const connection = await AppDataSource.initialize();
     console.log('isInitialized: ', connection.isInitialized);
     const res = await User.find();
     console.log(JSON.stringify(res));
-
     console.log('__dirname', __dirname);
-
 
     return (
         <html lang="en">

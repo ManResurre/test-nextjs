@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
-import AppDataSource from "@/data-source";
-import {User} from "@/entity/User";
+import AppDataSource from "../data-source";
+import {User} from "../entity/User";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -26,6 +26,8 @@ export default async function RootLayout(
     console.log('isInitialized: ', connection.isInitialized);
     const res = await User.find();
     console.log(JSON.stringify(res));
+
+    console.log('__dirname', __dirname);
 
 
     return (

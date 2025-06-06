@@ -1,11 +1,12 @@
 import {NextResponse} from "next/server";
-import {User} from "@/entity/User";
-import AppDataSource from "@/data-source";
+import {createDrizzleClient} from "@/lib/DrizzleClient";
 
 export async function GET() {
     try {
-        // await AppDataSource.initialize();
-        // const users = await User.find();
+
+        const db = createDrizzleClient();
+        console.log(db);
+
         const users = [{test: "11"}];
         return NextResponse.json(users);
     } catch (error) {

@@ -14,17 +14,19 @@
     "publish": true
   },
   "dependencies": {
+    "drizzle-orm": "^0.44.2",
     "next": "15.3.3",
-    "pg": "^8.16.0",
+    "postgres": "^3.4.7",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "typeorm": "^0.3.24"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "1.1.0",
     "@types/node": "22.15.29",
+    "@types/pg": "^8.15.4",
     "@types/react": "19.1.6",
     "@types/react-dom": "19.1.5",
+    "drizzle-kit": "^0.31.1",
     "eslint": "9.28.0",
     "eslint-config-next": "15.3.3",
     "typescript": "5.8.3",

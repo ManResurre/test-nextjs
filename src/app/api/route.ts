@@ -4,8 +4,9 @@ import AppDataSource from "@/data-source";
 
 export async function GET() {
     try {
-        await AppDataSource.initialize();
-        const users = await User.find();
+        // await AppDataSource.initialize();
+        // const users = await User.find();
+        const users = [{test: "11"}];
         return NextResponse.json(users);
     } catch (error) {
         console.error("DB error:", error);

@@ -9,6 +9,7 @@ export async function GET() {
     console.log(process.env.SUPABASE_DB_PASSWORD);
     console.log(process.env.SUPABASE_DB_NAME);
     console.log(process.env.SUPABASE_SSL_CERT_RAW);
+    console.log(process.env.HYPERDRIVE);
 
     try {
         const db = createDrizzleClient();

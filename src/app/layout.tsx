@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import {DatabaseService} from "@/lib/DatabaseService";
 import AppDataSource from "@/data-source";
+import {connection} from "next/server";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -25,8 +26,8 @@ export default async function RootLayout(
     console.log(process.env.SUPABASE_DB_PASSWORD);
     console.log(process.env.SUPABASE_DB_NAME);
 
-    await AppDataSource.initialize();
-
+    const connection = await AppDataSource.initialize();
+    console.log('isInitialized: ', connection.isInitialized);
     return (
         <html lang="en">
         <body className={inter.className}>{children}</body>

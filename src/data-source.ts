@@ -2,7 +2,7 @@ import "reflect-metadata";
 import {BaseEntity, Column, DataSource, PrimaryGeneratedColumn} from "typeorm";
 
 const sslConfig = {
-    ca: process.env.SUPABASE_SSL_CERT_RAW,
+    ca: "",
     rejectUnauthorized: true
 };
 

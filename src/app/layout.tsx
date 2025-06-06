@@ -15,11 +15,16 @@ export default async function RootLayout(
     }>) {
     // await DatabaseService.getInstance();
 
-    const connection = await AppDataSource.initialize();
-    console.log('isInitialized: ', connection.isInitialized);
-    const res = await User.find();
-    console.log(JSON.stringify(res));
-    console.log('__dirname', __dirname);
+    try {
+        const connection = await AppDataSource.initialize();
+        console.log('isInitialized: ', connection.isInitialized);
+        const res = await User.find();
+        console.log(JSON.stringify(res));
+        console.log('__dirname', __dirname);
+    } catch (e) {
+        console.log(e);
+    }
+
 
     return (
         <html lang="en">

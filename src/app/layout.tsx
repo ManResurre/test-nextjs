@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import {createDrizzleClient} from "@/lib/DrizzleClient";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -12,7 +13,9 @@ export default async function RootLayout(
         children: React.ReactNode;
     }>) {
 
-    console.log('HYPERDRIVE:', JSON.stringify(process.env.HYPERDRIVE));
+    const db = createDrizzleClient();
+    const result = await db.execute('select 1');
+    console.log("AAAA", result);
 
     return (
         <html lang="en">

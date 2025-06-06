@@ -9,7 +9,7 @@ import * as schema from "./schema";
 export function createDrizzleClient() {
     const client = postgres({
         host: process.env.SUPABASE_DB_HOST,
-        port: Number(process.env.SUPABASE_DB_PORT),
+        port: parseInt(process.env.SUPABASE_DB_PORT!),
         username: process.env.SUPABASE_DB_USER,
         password: process.env.SUPABASE_DB_PASSWORD,
         database: process.env.SUPABASE_DB_NAME,
